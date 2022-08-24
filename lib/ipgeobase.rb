@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
 require_relative 'ipgeobase/version'
+require_relative 'ipgeobase/ip_service'
 
 module Ipgeobase
-  class Error < StandardError; end
-  # Your code goes here...
+  def self.lookup(ip)
+    IPApiService.metadata_of(ip)
+  end
 end
